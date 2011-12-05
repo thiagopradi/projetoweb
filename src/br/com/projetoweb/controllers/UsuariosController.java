@@ -7,6 +7,7 @@ import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.projetoweb.daos.UsuarioDao;
+import br.com.projetoweb.helpers.HibernateUtil;
 import br.com.projetoweb.interfaces.Public;
 import br.com.projetoweb.models.Usuario;
 
@@ -17,7 +18,7 @@ public class UsuariosController {
 
 	public UsuariosController(Result result) {
 		this.result = result;
-		//this.usuarioDao = new UsuarioDao(HibernateUtil.getSession());
+		this.usuarioDao = new UsuarioDao(HibernateUtil.getSession());
 	}
 
 	@Get
@@ -29,7 +30,9 @@ public class UsuariosController {
 
 	@Post
 	@Path("/usuario")
+	@Public
 	public void salvar(Usuario usuario) {
+		System.out.println(usuario.getNome());
 		usuarioDao.salva(usuario);
 		result.redirectTo(this).novo(usuario);
 	}

@@ -1,5 +1,6 @@
 package br.com.projetoweb.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -7,14 +8,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuarios")
-
 public class Usuario {
 
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Column
 	private String nome;
+	@Column
 	private String email;
+	@Column
 	private String password;
 
 	public String getNome() {

@@ -202,10 +202,8 @@ ul{
 .direita {
 	margin: 0px;
 	padding: 0px;
-	float: left;
+	float: right;
 	height: 820px;
-	width: 370px;
-	margin-left:200px;
 }
 .login-area {
 	margin: 0px;

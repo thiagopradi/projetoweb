@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
@@ -14,8 +13,13 @@ import br.com.caelum.vraptor.ioc.Component;
 import br.com.caelum.vraptor.ioc.SessionScoped;
 import br.com.projetoweb.models.Usuario;
 
-
-public class UsuarioDao {
+@Component
+@SessionScoped
+public class UsuarioDao implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Session session;
 
 	public UsuarioDao(Session session) {
@@ -23,7 +27,9 @@ public class UsuarioDao {
 	}
 
 	public void salva(Usuario p) {
+		this.session.getTransaction().begin();
 		this.session.save(p);
+		this.session.getTransaction().commit();
 	}
 
 	public void remove(Usuario p) {
