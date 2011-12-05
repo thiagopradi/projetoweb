@@ -31,24 +31,35 @@
           </div>
           <div class="area-texto">
             <div align="justify">
-              <p>
-                Este site foi desenvolvido para o trabalho final de Desenvolvimento Web.
-              </p>
-              <br />
-              <br />
-              <p>
-                Requisitos
-              </p>
-              <br />
-              <ol>
-                <li>Um cadastro Mestre Detalhe; </li>
-                <li>Um cadastro categorizado (exemplo: produto e categorias);</li>
-                <li>Login e senha para acesso ao sistema;</li>
-                <li>Desenvolvido em Java (no servidor) e tendo como resultado no cliente (navegador)
-                  as tecnologias HTML, JavaScript e CSS;</li>
-                <li>Um Javascript e um CSS desenvolvido pela própria equipe;</li>
-                <li>Mapeamento objeto/relacional (JPA/Hibernate/Toplink) para armazenamento dos dados.</li>
-              </ol>
+                      <h1>Cadastro</h1>
+          <div>
+          <form action="${pageContext.request.contextPath}/autenticar" method="post" class=".form-stacked">
+
+	<div class="clearfix">
+		<label> Nome: </label>
+		<div class="input">
+			<input type="text" name="usuario.name" />
+		</div>
+	</div>
+	
+	<div class="clearfix">
+		<label>E-mail</label>
+		<div class="input">
+			<input type="text" name="usuario.email" />
+		</div>
+	</div>
+
+	<div class="clearfix">
+	<label>Senha: </label>
+		<div class="input">
+ 			<input type="password" name="usuario.password" /> 
+		</div>
+	</div>
+	
+	
+ 		<input type="submit" value="Cadastrar" class="btn primary" />
+ </form>
+         
             </div>
           </div>
         </div>
@@ -89,9 +100,7 @@
                     <a href="${linkTo[UsuariosController].novo}">Cadastrar</a>
                   </div>
                 </div>
-
               </form>
-
             </div>
             <div class="login-rodape">
             </div>
