@@ -30,7 +30,7 @@ public class LoginInterceptor implements Interceptor {
         if (userSession.isLogged()) {
             stack.next(method, resourceInstance);
         } else {
-            result.redirectTo(LoginController.class).login();
+            result.redirectTo("/");
         }
     }
 

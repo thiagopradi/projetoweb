@@ -49,7 +49,7 @@ public class UsuarioDao implements Serializable {
 		EntityManager entityManager = factory.createEntityManager();  
 		
 		 try {
-			 	Query query = entityManager.createQuery("from Usuario where email = :email and senha = :senha");
+			 	Query query = entityManager.createQuery("from Usuario where email = :email and password = :senha");
 			    query.setParameter("email", email);
 			    query.setParameter("senha", senha);
 			    return (Usuario) query.getSingleResult();

@@ -17,7 +17,13 @@ public class IndexController {
 	@Path("/")
 	@Public
 	public void index() {
-		result.include("variable", "VRaptor!");
+	}
+	
+	@Path("/sobreNos")
+	@Public
+	public void sobreNos() {
+		
+		
 	}
 
 }

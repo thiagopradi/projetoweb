@@ -32,9 +32,9 @@ public class UsuariosController {
 	@Path("/usuario")
 	@Public
 	public void salvar(Usuario usuario) {
-		System.out.println(usuario.getNome());
 		usuarioDao.salva(usuario);
-		result.redirectTo(this).novo(usuario);
+		result.include("message", "Usu‡rio cadastrado com sucesso!");
+		result.redirectTo("/");
 	}
 
 	@Put

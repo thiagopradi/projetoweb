@@ -22,29 +22,22 @@ public class LoginController {
 	}
 
 	@Public
-	@Get("/login")
-	public void login() {
-
-	}
-
-	@Public
 	@Post("/autenticar")
 	public void autenticar(Usuario usuario) {
 		UsuarioDao ud = new UsuarioDao(HibernateUtil.getSession());
 		Usuario user = ud.autenticar(usuario.getEmail(), usuario.getPassword());
-
 		if (user != null) {
 			userSession.setUser(user);
-			result.redirectTo(IndexController.class).index();
+			result.redirectTo(ProjetosController.class).list();
 		} else {
-			result.include("error", "E-mail ou senha incorreta!").redirectTo(this).login();
+			result.include("error", "E-mail ou senha incorreta!").redirectTo("/");
 		}
 	}
 
 	@Get("/logout")
 	public void logout() {
 		userSession.logout();
-		result.redirectTo(this).login();
+		result.redirectTo("/");
 	}
 
 }

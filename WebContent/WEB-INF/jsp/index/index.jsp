@@ -1,4 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -6,7 +8,6 @@
     <link href="css/estilo.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <form id="frmPrincipal" name="form1" method="post" action="">
       <div id="topo-superior">
         <div class="logotipo">
         </div>
@@ -19,9 +20,8 @@
           </div>
           <div class="esquerda-menu-area">
             <div align="right">
-              <a href="principal.htm" class="menu-item">Principal</a><br />
-              <a href="projeto.htm" class="menu-item">Projetos</a><br />
-              <a href="sobreNos.htm" class="menu-item">Sobre Nós</a><br />
+              <a href="${pageContext.request.contextPath}/" class="menu-item">Principal</a> <br />
+              <a href="${pageContext.request.contextPath}/sobreNos" class="menu-item">Sobre Nós</a><br />
             </div>
           </div>
         </div>
@@ -31,6 +31,12 @@
           </div>
           <div class="area-texto">
             <div align="justify">
+            <div id="error">
+   				<h3>${error}</h3>
+			</div>
+			  <div id="message">
+   				<h3>${message}</h3>
+			</div>
               <p>
                 Este site foi desenvolvido para o trabalho final de Desenvolvimento Web.
               </p>
@@ -69,8 +75,8 @@
 
                 <div class="textbox">
                   <label>
-                    <input id="txtUsuario" type="text" class="righttextbox" name="usuario.email" value="Usuário" />
                   </label>
+                   <input id="txtUsuario" type="text" class="righttextbox" name="usuario.email" value="Usuário" />
                 </div>
                 <div class="textbox">
                   <label>
@@ -111,6 +117,5 @@
           </div>
         </div>
       </div>
-    </form>
   </body>
 </html>
